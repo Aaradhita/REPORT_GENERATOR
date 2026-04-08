@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Report</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="flash-messages">
+{% for message in messages %}
+<div class="flash-message">
+{{ message }}
+<span class="close-btn" onclick="this.parentElement.style.display='none';">✖</span>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+  <h2>Generate a New Report</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    <label>Select Report Type:</label>
+    <select name="report_type" required>
+      <option value="network">Network</option>
+      <option value="web">Web</option>
+      <option value="server hardening">Server</option>
+      <option value="phishing">Phishing</option>
+      <option value="console">Console</option>
+      <option value="og certain - web">OG Certain - Web</option>
+      <option value="og certain - network">OG Certain - Network</option>
+      <option value="cloud">Cloud</option>
+      <option value="firewall">Firewall</option>
+      
+
+    </select>
+    <br><br>
+
+    <label>Excel File (.xlsx):</label>
+    <input type="file" name="excel" accept=".xlsx" required><br><br>
+
+    <label>POC ZIP File:</label>
+    <input type="file" name="poc_zip" accept=".zip"><br>
+    <small>ZIP is required only for screenshot-enabled templates.</small><br><br>
+
+    <label>Report File Name:</label>
+    <input type="text" name="filename" required><br><br>
+
+    <div id="button-container" class="button-zone">
+      <button type="submit" id="generate-btn" class="submit-btn">Generate Report</button>
+    </div>
+  </form>
+
+  <div class="back-button">
+    <a href="{{ url_for('dashboard') }}" class="action-button">
+      ⬅️ Back to Dashboard
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const btn = document.getElementById("generate-btn");
+      const container = document.getElementById("button-container");
+
+      container.addEventListener("mousemove", function (e) {
+        const inputs = form.querySelectorAll("input, select");
+        const isEmpty = Array.from(inputs).some(input => {
+            if (input.type === "file") {
+                return input.files.length === 0;
+            } else {
+                return !input.value.trim();
+            }
+        });
+
+        if (isEmpty) {
+          const rect = container.getBoundingClientRect();
+          const offsetX = e.clientX - rect.left;
+
+          if (offsetX > rect.width / 2) {
+            btn.style.transform = "translateX(-150px)";
+          } else {
+            btn.style.transform = "translateX(150px)";
+          }
+        } else {
+          btn.style.transform = "translateX(0)";
+        }
+      });
+
+      form.addEventListener("input", function () {
+        btn.style.transform = "translateX(0)";
+      });
+    });
+  </script>
+</body>
+</html>

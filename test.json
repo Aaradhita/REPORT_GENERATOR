@@ -1,0 +1,37 @@
+{
+  "context": {
+    "vulnerabilities_summary": [
+      {
+        "sno": "1",
+        "asset": "example.com",
+        "title": "Test Vulnerability",
+        "cve": "CVE-2023-1234",
+        "severity": "High",
+        "reference": "Test Ref",
+        "new_or_repeat": "New",
+        "affected_assets": "example.com",
+        "vulnerable_url": "http://example.com/vuln",
+        "vulnerable_function": "login",
+        "vulnerable_component": "web app",
+        "recommendations": "Fix it"
+      }
+    ],
+    "vulnerabilities_details": [
+      {
+        "title": "Test Vulnerability",
+        "asset": "example.com",
+        "affected_assets": "example.com",
+        "vulnerable_url": "http://example.com/vuln",
+        "vulnerable_function": "login",
+        "vulnerable_component": "web app",
+        "description": "Test desc",
+        "cve": "CVE-2023-1234",
+        "severity": "High",
+        "recommendation": "Fix it",
+        "reference": "Test Ref",
+        "status": "New",
+        "screenshots": []
+      }
+    ]
+  }
+}

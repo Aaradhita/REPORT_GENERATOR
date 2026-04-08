@@ -1,0 +1,132 @@
+2026-04-08 22:37:37,888 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_network_report_20260408_223737.docx
+2026-04-08 22:38:03,044 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\NETWORK_20260408_223802.docx
+2026-04-08 22:45:48,019 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.31.243:5555
+2026-04-08 22:45:48,019 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-04-08 22:45:59,309 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:45:59] "GET / HTTP/1.1" 200 -
+2026-04-08 22:45:59,570 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:45:59] "GET /static/css/styles.css HTTP/1.1" 200 -
+2026-04-08 22:45:59,685 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:45:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-08 22:46:01,187 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:01] "[32mGET /generate HTTP/1.1[0m" 302 -
+2026-04-08 22:46:01,196 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:01] "GET /login?next=/generate HTTP/1.1" 200 -
+2026-04-08 22:46:01,268 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 22:46:06,676 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:06] "POST /login?next=/generate HTTP/1.1" 200 -
+2026-04-08 22:46:06,757 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 22:46:28,022 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:28] "[32mPOST /login?next=/generate HTTP/1.1[0m" 302 -
+2026-04-08 22:46:28,032 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:28] "GET /dashboard HTTP/1.1" 200 -
+2026-04-08 22:46:28,112 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 22:46:31,591 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:31] "GET /generate HTTP/1.1" 200 -
+2026-04-08 22:46:31,648 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 22:46:59,214 [ERROR] services.report_generator: Report render failed for D:\aaradhitha\report generator\generated_reports\testing_20260408_224657.docx
+Traceback (most recent call last):
+  File "D:\aaradhitha\report generator\services\report_generator.py", line 400, in generate_report
+    doc.render(context)
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 486, in render
+    xml_src = self.build_xml(context, jinja_env)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 433, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 310, in render_xml_part
+    dst_xml = template.render(context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 240, in top-level template code
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\inline_image.py", line 75, in __str__
+    return self._insert_image()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\inline_image.py", line 53, in _insert_image
+    pic = self.tpl.current_rendering_part.new_pic_inline(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 64, in __getattr__
+    return getattr(self.docx, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'current_rendering_part'
+2026-04-08 22:46:59,219 [ERROR] __main__: Report generation failed
+Traceback (most recent call last):
+  File "D:\aaradhitha\report generator\services\report_generator.py", line 400, in generate_report
+    doc.render(context)
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 486, in render
+    xml_src = self.build_xml(context, jinja_env)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 433, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 310, in render_xml_part
+    dst_xml = template.render(context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 240, in top-level template code
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\inline_image.py", line 75, in __str__
+    return self._insert_image()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\inline_image.py", line 53, in _insert_image
+    pic = self.tpl.current_rendering_part.new_pic_inline(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\.venv\Lib\site-packages\docxtpl\template.py", line 64, in __getattr__
+    return getattr(self.docx, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'current_rendering_part'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\aaradhitha\report generator\app.py", line 159, in generate
+    output = generate_report(
+             ^^^^^^^^^^^^^^^^
+  File "D:\aaradhitha\report generator\services\report_generator.py", line 404, in generate_report
+    raise ReportGenerationError(f"Failed to save report: {exc}") from exc
+services.report_generator.ReportGenerationError: Failed to save report: 'NoneType' object has no attribute 'current_rendering_part'
+2026-04-08 22:46:59,221 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:59] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2026-04-08 22:46:59,227 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:59] "GET /generate HTTP/1.1" 200 -
+2026-04-08 22:46:59,298 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 22:46:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 22:54:45,153 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5555
+ * Running on http://192.168.31.243:5555
+2026-04-08 22:54:45,153 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2026-04-08 22:55:13,356 [ERROR] services.report_generator: Report render failed for D:\aaradhitha\report generator\generated_reports\test_network_report_20260408_225512.docx
+Traceback (most recent call last):
+  File "D:\aaradhitha\report generator\services\report_generator.py", line 400, in generate_report
+    doc.render(context)
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\template.py", line 486, in render
+    xml_src = self.build_xml(context, jinja_env)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\template.py", line 433, in build_xml
+    xml = self.render_xml_part(xml, self.docx._part, context, jinja_env)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\template.py", line 310, in render_xml_part
+    dst_xml = template.render(context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 240, in top-level template code
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\inline_image.py", line 75, in __str__
+    return self._insert_image()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\inline_image.py", line 53, in _insert_image
+    pic = self.tpl.current_rendering_part.new_pic_inline(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sakth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\docxtpl\template.py", line 64, in __getattr__
+    return getattr(self.docx, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'current_rendering_part'
+2026-04-08 22:55:22,267 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_network_report_nozip_20260408_225521.docx
+2026-04-08 22:55:41,038 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_network_report_fixed_20260408_225540.docx
+2026-04-08 22:56:04,958 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_web_report_20260408_225604.docx
+2026-04-08 22:56:18,271 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_network_pdf_20260408_225617.docx
+2026-04-08 22:56:25,429 [INFO] services.report_generator: Generated PDF report: D:\aaradhitha\report generator\generated_reports\test_network_pdf_20260408_225617.pdf
+2026-04-08 22:56:30,106 [INFO] services.report_generator: Generated DOCX report: D:\aaradhitha\report generator\generated_reports\test_console_report_20260408_225629.docx
+2026-04-08 23:06:00,062 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 23:06:00] "GET /generate HTTP/1.1" 200 -
+2026-04-08 23:06:00,241 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 23:06:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2026-04-08 23:06:03,450 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 23:06:03] "GET /generate HTTP/1.1" 200 -
+2026-04-08 23:06:03,508 [INFO] werkzeug: 192.168.31.243 - - [08/Apr/2026 23:06:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -

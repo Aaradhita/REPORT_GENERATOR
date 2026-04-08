@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0a0f24;
+            color: #ffffff;
+        }
+        h2 {
+            margin-top: 50px;
+        }
+        .dashboard-buttons {
+            margin-top: 40px;
+        }
+        .dashboard-buttons a {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .dashboard-buttons a:hover {
+            background-color: #0078d7;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome, {{ current_user.id }}!</h2>
+
+    <div class="dashboard-buttons">
+        <a href="{{ url_for('generate') }}">Generate Report</a>
+        <a href="{{ url_for('reports') }}">View Reports</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
+

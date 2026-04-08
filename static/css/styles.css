@@ -1,0 +1,352 @@
+/* General Layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(8, 75, 86, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #00ffff;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #66ffcc;
+  color: hsl(110, 67%, 56%);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 15px;
+}
+
+input[type="text"][name="q"],
+#search-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #00ffaa;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00ffaa;
+  font-size: 14px;
+  width: 250px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Labels */
+label {
+  align-self: flex-start;
+  max-width: 400px;
+  width: 100%;
+  margin: 10px auto 4px;
+}
+
+/* File Button */
+input::file-selector-button {
+  background: #00ffaa;
+  border: none;
+  padding: 6px 12px;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Buttons */
+input[type="submit"],
+button {
+  padding: 12px 20px;
+  background: #00ffaa;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background: #00ffcc;
+}
+
+/* Links */
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash {
+  background: #ff0066;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* File list */
+.file-list {
+  list-style: none;
+  padding: 0;
+}
+
+.file-list li {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #00ffcc;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/* A Button inside an anchor */
+a button {
+  all: unset;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00ffaa;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  text-align: center;
+}
+
+a button:hover {
+  background: #00ffcc;
+}
+
+/* Submit Button */
+.submit-btn {
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  background: #00ffaa;
+  color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button Zone */
+.button-zone {
+  position: relative;
+  height: 60px;
+  margin-top: 20px;
+}
+
+/* Action Button */
+.action-button {
+  display: inline-block;
+  background: #00ffaa;
+  color: #000;
+  padding: 10px 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: #00ffcc;
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Flash container */
+.flash-messages {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.flash-message {
+  background-color: #ffecec;
+  border: 1px solid #ff5e5e;
+  color: #b30000;
+  padding: 12px 40px 12px 12px;
+  border-radius: 4px;
+  position: relative;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flash-message .close-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  background-color: #388e3c;
+  color: white;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #388e3c;
+}
+
+/* Search Section */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Clear Button */
+.clear-btn {
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Autocomplete List */
+.autocomplete-list {
+  list-style: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1c1f2b;
+  color: #00ffff;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #00ffaa;
+  border-radius: 6px;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 250px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.autocomplete-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.highlight {
+  background-color: #333;
+}
+
+.autocomplete-list:empty {
+  display: none;
+  border: none;
+}
+
+/* Centered Table */
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 900px;
+  background-color: #1c1f2b;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #8DBCC7;
+  color: #000;
+  font-weight: bold;
+}
+
+td {
+  color: #39FF14;
+}
